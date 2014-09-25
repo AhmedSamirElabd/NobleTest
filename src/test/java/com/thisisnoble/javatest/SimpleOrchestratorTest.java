@@ -28,6 +28,7 @@ public class SimpleOrchestratorTest {
         safeSleep(100);
         CompositeEvent ce = (CompositeEvent) testPublisher.getLastEvent(); 
         assertEquals(4, ce.size());
+        assertEquals(te, ce.getParent());
         
         if (ce.getChildById("tradeEvt-riskEvt") instanceof RiskEvent){
         	RiskEvent re1 = ce.getChildById("tradeEvt-riskEvt");
